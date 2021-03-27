@@ -1,0 +1,67 @@
+.details {
+    width: 70vw;
+    min-width: 15em;
+    margin: 3em auto;
+}
+
+div.details-content {
+    flex: 1 1 15em;
+    margin: 2em;
+    min-height: 15em;
+}
+
+.details-content h2 {
+    border-bottom: 2px solid white;
+}
+
+.details-content strong {
+    display: block;
+    margin: 0.5em 1em;
+}
+
+.details-content .buttons {
+    margin: 1em;
+    float: right;
+}
+
+.btn {
+    padding: 0.3rem;
+    color:white;
+}
+
+.delete:hover {
+    background-color: lightsalmon;
+    color: white;
+}
+
+.edit:hover {
+    background-color: lightskyblue;
+    color: white;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3em;
+    border: 2px solid white;
+    padding:2em;
+}
+
+.container .img {
+    flex: 1 1 0em;
+    margin: 2em 1em;
+    overflow: hidden;
+    max-height: 31em;
+    min-width: 10em;
+    border: 2px solid white;
+
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: 100%;
+}

@@ -1,5 +1,6 @@
 @import './Common/common.css';
 @import './Common/home.css';
 @import './Common/typography.css';
-
-
+@import './Common/details.css';
+@import './Common/create.css';
+@import './Common/form.css';

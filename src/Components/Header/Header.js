@@ -3,8 +3,8 @@ import style from './Header.module.css';
 const Header = () => {
     return (
         <header>
-        <h1><a class="home" href="/">Traxxas</a></h1>
-        <nav class="nav-buttons">
+        <h1><a className="home" href="/">Traxxas</a></h1>
+        <nav className="nav-buttons">
             <a href="#">Create</a>
             <a href="#">Register</a>
             {/* {% if user.is_authenticated %}
