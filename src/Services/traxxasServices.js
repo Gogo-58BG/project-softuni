@@ -32,15 +32,15 @@ export const getOne = (objectId) => {
 //     });
 // };
 
-// export const update = (petId, pet) => {
-//     return fetch(`${url}/${petId}`, {
-//         method: 'PUT',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(pet)
-//     });
-// };
+export const update = (objectId, traxxas) => {
+    return fetch(`${url}/${objectId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(traxxas)
+    });
+};
 
 // export const pet = (petId, likes) => {
 //     return fetch(`${url}/${petId}`, {

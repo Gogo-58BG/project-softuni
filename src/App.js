@@ -4,7 +4,8 @@ import './App.css';
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Main from "./Components/Main/Main";
-import Details from './Components/Details/Details'
+import Details from './Components/Details/Details';
+import Edit from './Components/Edit/Edit'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Switch>
       <Route path="/" exact component={Main} />
       <Route path="/traxxas/details/:objectId" exact component={Details} />
+      <Route path="/traxxas/details/:objectId/edit" component={Edit} />
       </Switch>
       <Footer />
     </div>
