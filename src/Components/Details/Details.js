@@ -40,7 +40,7 @@ const Details = ({
                 <strong>{traxxas.category}</strong>
                 <p>{traxxas.description}</p>
                 <div className="buttons">
-                    <a href="#" className="btn delete">Delete</a>
+                    <Link to={`${traxxas.objectId}/delete`} className="btn delete">Delete</Link>
                     <Link to={`${traxxas.objectId}/edit`} className="btn edit">Edit</Link>
                     <Link to={'/'} className="btn edit">Back</Link>
                 </div>

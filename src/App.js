@@ -7,6 +7,7 @@ import Main from "./Components/Main/Main";
 import Details from './Components/Details/Details';
 import Edit from './Components/Edit/Edit';
 import Create from './Components/Create/Create';
+import Delete from './Components/Delete/Delete'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/traxxas/details/:objectId" exact component={Details} />
       <Route path="/traxxas/details/:objectId/edit" component={Edit} />
       <Route path="/traxxas/create" component={Create} />
+      <Route path="/traxxas/details/:objectId/delete" exact component={Delete} />
       </Switch>
       <Footer />
     </div>

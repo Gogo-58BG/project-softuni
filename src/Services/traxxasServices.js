@@ -41,13 +41,12 @@ export const update = (objectId, traxxas) => {
     });
 };
 
-// export const pet = (petId, likes) => {
-//     return fetch(`${url}/${petId}`, {
-//         method: 'PATCH',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({likes})
-//     })
-//         .then(res => res.json());
-// }
+export const deleteTraxxas = (objectId) => {
+    return fetch(`${url}/${objectId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+}
+
