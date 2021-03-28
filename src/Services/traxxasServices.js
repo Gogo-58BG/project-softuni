@@ -14,23 +14,22 @@ export const getOne = (objectId) => {
         .catch(error => console.log(error));
 };
 
-// export const create = (petName, description, imageURL, category) => {
-//     let pet = {
-//         name: petName,
-//         description,
-//         imageURL,
-//         category,
-//         likes: 0,
-//     };
-    
-//     return fetch(url, {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(pet)
-//     });
-// };
+export const create = (title, description, imageURL, category) => {
+    let traxxas = {
+        title,
+        description,
+        imageURL,
+        category,
+    };
+
+    return fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(traxxas)
+    });
+};
 
 export const update = (objectId, traxxas) => {
     return fetch(`${url}/${objectId}`, {

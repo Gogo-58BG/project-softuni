@@ -51,8 +51,8 @@ const Edit = ({
                         <label for="category">Category:</label>
                     </p>
                     <p className="field category">
-                        <input type="select" name="imageURL" id="imageURL" defaultValue={traxxas.imageURL} />
-                        <label for="category">Image URL:</label>
+                        <input type="text" name="imageURL" id="imageURL" defaultValue={traxxas.imageURL} />
+                        <label for="imageURL">Image URL:</label>
                     </p>
                     <p className="field content">
                         <textarea name="description" id="description" defaultValue={traxxas.description}></textarea>

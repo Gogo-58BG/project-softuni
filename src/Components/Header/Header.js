@@ -1,11 +1,12 @@
 import style from './Header.module.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <header>
         <h1><a className="home" href="/">Traxxas</a></h1>
         <nav className="nav-buttons">
-            <a href="#">Create</a>
+            <Link to={`/traxxas/create`}>Create</Link>
             <a href="#">Register</a>
             {/* {% if user.is_authenticated %}
             <a href="{% url 'sign out' %}">Logout</a>
