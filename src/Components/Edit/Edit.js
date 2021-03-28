@@ -43,10 +43,10 @@ const Edit = ({
                     </p>
                     <p className="field category">
                         <select name="category" id="category">
-                            <option value="monster trucks" selected={traxxas.category == "monster trucks"}>Monster Trucks</option>
-                            <option value="on road cars" selected={traxxas.category == "on road cars"}>On Road Cars</option>
-                            <option value="short course trucks" selected={traxxas.category == "short course trucks"}>Short Course Trucks</option>
-                            <option value="stadium trucks" selected={traxxas.category == "stadium trucks"}>Stadium Trucks</option>
+                            <option value="monster-trucks" selected={traxxas.category == "monster-trucks"}>Monster Trucks</option>
+                            <option value="on-road-cars" selected={traxxas.category == "on-road-cars"}>On Road Cars</option>
+                            <option value="short-course-trucks" selected={traxxas.category == "short-course-trucks"}>Short Course Trucks</option>
+                            <option value="stadium-trucks" selected={traxxas.category == "stadium-trucks"}>Stadium Trucks</option>
                         </select>
                         <label for="category">Category:</label>
                     </p>
