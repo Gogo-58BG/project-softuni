@@ -7,7 +7,7 @@ const Header = () => {
         <h1><a className="home" href="/">Traxxas</a></h1>
         <nav className="nav-buttons">
             <Link to={`/traxxas/create`}>Create</Link>
-            <a href="#">Register</a>
+            <Link to="/register">Register</Link>
             {/* {% if user.is_authenticated %}
             <a href="{% url 'sign out' %}">Logout</a>
             {% else %}
