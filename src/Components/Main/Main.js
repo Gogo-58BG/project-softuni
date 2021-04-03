@@ -75,7 +75,7 @@ class Main extends Component {
                     )}
                 </section>
                 {/* <!-- No articles message -->
-            <h3 class="no-articles">No articles yet</h3> */}
+            <h3 className="no-articles">No articles yet</h3> */}
             </div>
         );
     }

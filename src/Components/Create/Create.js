@@ -16,7 +16,7 @@ const Create = ({
     };
 
     return (
-        <div class="container">
+        <div className="container">
             <form onSubmit={onCreateTraxxasSubmitHandler}>
                 <fieldset>
                     <legend>Create article</legend>
@@ -38,13 +38,13 @@ const Create = ({
                         <input type="text" name="imageURL" id="imageURL" />
                         <label for="imgeURL">Image URL:</label>
                     </p>
-                    <p class="field content">
+                    <p className="field content">
                         <textarea name="description" id="content"></textarea>
                         <label for="description">Description:</label>
                     </p>
 
                     <p className="field submit">
-                        <button class="btn submit" type="submit">Create</button>
+                        <button className="btn submit" type="submit">Create</button>
                     </p>
 
                 </fieldset>

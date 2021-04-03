@@ -74,7 +74,7 @@ export const login = (username, password) => {
             login: username,
             password
         })
-    });
+    }).then(result => result.json());
 }
 
 // export const logout = (user) => {
