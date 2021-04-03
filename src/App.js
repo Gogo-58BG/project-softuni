@@ -1,4 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 import './App.css';
 import Header from "./Components/Header/Header";
@@ -12,6 +13,9 @@ import Register from './Components/Register/Register';
 import Login from './Components/Login/Login'
 
 function App() {
+
+  console.log(localStorage);
+
   return (
     <div className="App">
       <Header />

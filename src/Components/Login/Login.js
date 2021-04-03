@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 
 import * as traxxasServices from '../../Services/traxxasServices';
 
 
 const Login = ({
+    setToken, 
     history,
 }) => {
+    const [user, setUser] = useState();
 
     const onSaveSubmit = (e) => {
         e.preventDefault();
@@ -16,17 +20,27 @@ const Login = ({
 
         traxxasServices.login(username, password)
             .then(() => {
+                
                 history.push(`/`);
                 return;
             });
     }
+
+//     const user = traxxasServices.login(username, password)
+//     .then(() => {
+//         setUser(user);
+//         history.push(`/`);
+//     });
+
+// return (user);
+// }
 
     return (
         <div className="container auth">
         <form onSubmit={onSaveSubmit}>
             <fieldset>
                 <legend>Login</legend>
-                <p class="field email">
+                <p className="field email">
                     <input type="text" id="username" name="username" placeholder="username"/>
                     <label htmlFor="username">Username:</label>
                 </p>
