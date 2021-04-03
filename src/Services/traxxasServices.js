@@ -77,11 +77,13 @@ export const login = (username, password) => {
     }).then(result => result.json());
 }
 
-// export const logout = (user) => {
-//     return fetch(`${url_users}/logout`, {
-//         headers: {
-//             'user-token': user.user-token
-//         }
-//     });
-// }
+export const logout = (token) => {
+    let userToken = token.userToken;
+    localStorage.clear();
+    return fetch(`${url_users}/logout`, {
+        headers: {
+            'user-token': userToken,
+        }
+    });
+}
 

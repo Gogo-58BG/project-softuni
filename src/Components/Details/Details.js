@@ -1,37 +1,23 @@
 import { useEffect, useState } from 'react';
 import * as traxxasServices from '../../Services/traxxasServices';
 import { Link } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
 
 
 const Details = ({
-    match
+    match,
+    user
 }) => {
     let [traxxas, setTraxxas] = useState({});
-    
+
     useEffect(() => {
         traxxasServices.getOne(match.params.objectId)
             .then(res => setTraxxas(res));
-            console.log(traxxas);
+        console.log(traxxas);
     }, []);
 
-    // const onSaveSubmit = (e) => {
-    //     e.preventDefault();
-    //     console.log(e.target);
+    let canEdit = (traxxas.ownerID == user.objectId)
 
-    //     let traxxasId = match.params.traxxasId;
-    //     let updatedTraxxas = {...traxxas, 
-    //         title: e.target.title.value, 
-    //         description: e.target.description.value,
-    //         imageURL: e.target.imageURL.value,
-    //         category: e.target.category.value,
-    //     };
-
-    //     traxxasServices.update(traxxasId, updatedTraxxas)
-    //         .then(() => {
-    //             history.push(`/traxxas/details/${traxxasId}`);
-    //             return;
-    //         });
-    // }
     return (
         <div className="container details">
             <div className="details-content">
@@ -40,9 +26,11 @@ const Details = ({
                 <strong>{traxxas.category}</strong>
                 <p>{traxxas.description}</p>
                 <div className="buttons">
-                    <Link to={`${traxxas.objectId}/delete`} className="btn delete">Delete</Link>
-                    <Link to={`${traxxas.objectId}/edit`} className="btn edit">Edit</Link>
-                    <Link to={'/'} className="btn edit">Back</Link>
+                    {canEdit
+                      (<Link to={`${traxxas.objectId}/delete`} className="btn delete">Delete</Link>,
+                      <Link to={`${traxxas.objectId}/edit`} className="btn edit">Edit</Link>)
+                    }
+                   <Link to={'/'} className="btn edit">Back</Link>
                 </div>
             </div>
         </div>
