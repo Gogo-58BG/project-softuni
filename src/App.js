@@ -1,4 +1,4 @@
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import './App.css';
@@ -13,11 +13,10 @@ import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
 import Logout from'./Components/Logout/Logout';
 import { getUserDataInLocalStorage } from './Services/localStorageService';
+import { logout } from './Services/traxxasServices';
 
 const App = () => {
   const [user, setUser] = useState(getUserDataInLocalStorage());
-
-  console.log(user);
 
   return (
     <div className="App">
@@ -26,12 +25,16 @@ const App = () => {
         <Route path="/" exact component={Main} />
         <Route path="/traxxas/details/:objectId" exact render={props => <Details {...props} logedInUser={user} />} />
         <Route path="/traxxas/details/:objectId/edit" component={Edit} />
-        <Route path="/traxxas/create" component={Create} />
+        <Route path="/traxxas/create" render={props => <Create {...props} logedInUser={user} />} />
         <Route path="/traxxas/details/:objectId/delete" exact component={Delete} />
         <Route path="/register" exact component={Register} />
         <Route path="/login" render={props => <Login {...props} setUser={setUser} />} />
         {/* <Route path="/logout" component={Logout} /> */}
-        <Route path="/logout"  render={props => <Logout token={user.userToken} />} />
+        <Route path="/logout"  render={() => {
+         logout(user);
+         setUser(null);
+          return <Redirect to="/" />
+        }} /> 
       </Switch>
       <Footer />
     </div>

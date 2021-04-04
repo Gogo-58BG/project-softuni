@@ -15,12 +15,13 @@ export const getOne = (objectId) => {
         .catch(error => console.log(error));
 };
 
-export const create = (title, description, imageURL, category) => {
+export const create = (title, description, imageURL, category, ownerId) => {
     let traxxas = {
         title,
         description,
         imageURL,
         category,
+        ownerId,
     };
 
     return fetch(url, {
@@ -77,10 +78,10 @@ export const login = (username, password) => {
     }).then(result => result.json());
 }
 
-export const logout = (token) => {
-    let userToken = token.userToken;
+export const logout = async (user) => {
+    let userToken = user.userToken;
     localStorage.clear();
-    return fetch(`${url_users}/logout`, {
+    await fetch(`${url_users}/logout`, {
         headers: {
             'user-token': userToken,
         }

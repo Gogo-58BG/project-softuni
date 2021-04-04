@@ -3,13 +3,17 @@ import * as traxxasServices from '../../Services/traxxasServices';
 
 const Create = ({
     history,
+    logedInUser,
 }) => {
+    let userId = logedInUser.objectId;
+    console.log(userId);
+
     const onCreateTraxxasSubmitHandler = (e) => {
         e.preventDefault();
 
         const { title, description, imageURL, category } = e.target;
 
-        traxxasServices.create(title.value, description.value, imageURL.value, category.value)
+        traxxasServices.create(title.value, description.value, imageURL.value, category.value, userId)
             .then(() => {
                 history.push('/');
             })

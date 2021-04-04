@@ -6,17 +6,21 @@ import userEvent from '@testing-library/user-event';
 
 const Details = ({
     match,
-    user
+    logedInUser,
 }) => {
     let [traxxas, setTraxxas] = useState({});
+    let userId = logedInUser?.objectId;
 
-    useEffect(() => {
-        traxxasServices.getOne(match.params.objectId)
-            .then(res => setTraxxas(res));
-        console.log(traxxas);
+    useEffect( async () => {
+       let res = await traxxasServices.getOne(match.params.objectId) 
+       setTraxxas(res)
     }, []);
 
-    let canEdit = (traxxas.ownerID == user.objectId)
+    console.log(traxxas);
+    console.log(userId);
+    console.log(traxxas.ownerId)
+
+    let canEdit = Boolean(userId ? traxxas.ownerId == userId : false);
 
     return (
         <div className="container details">
@@ -26,11 +30,13 @@ const Details = ({
                 <strong>{traxxas.category}</strong>
                 <p>{traxxas.description}</p>
                 <div className="buttons">
-                    {canEdit
-                      (<Link to={`${traxxas.objectId}/delete`} className="btn delete">Delete</Link>,
-                      <Link to={`${traxxas.objectId}/edit`} className="btn edit">Edit</Link>)
+                    {canEdit &&
+                    <>
+                        <Link to={`${traxxas.objectId}/delete`} className="btn delete">Delete</Link>
+                            <Link to={`${traxxas.objectId}/edit`} className="btn edit">Edit</Link>
+                            </>
                     }
-                   <Link to={'/'} className="btn edit">Back</Link>
+                    <Link to={'/'} className="btn edit">Back</Link>
                 </div>
             </div>
         </div>
