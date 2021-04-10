@@ -12,12 +12,10 @@ const Delete = ({
     useEffect(() => {
         traxxasServices.getOne(match.params.objectId)
             .then(res => setTraxxas(res));
-        console.log(traxxas);
     }, []);
 
     const onDeleteSubmit = (e) => {
         e.preventDefault();
-        console.log(e.target);
 
         let traxxasId = match.params.objectId;
 

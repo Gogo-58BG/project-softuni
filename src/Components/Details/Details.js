@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import * as traxxasServices from '../../Services/traxxasServices';
 import { Link } from 'react-router-dom';
-import userEvent from '@testing-library/user-event';
-
 
 const Details = ({
     match,
@@ -15,10 +13,6 @@ const Details = ({
        let res = await traxxasServices.getOne(match.params.objectId) 
        setTraxxas(res)
     }, []);
-
-    console.log(traxxas);
-    console.log(userId);
-    console.log(traxxas.ownerId)
 
     let canEdit = Boolean(userId ? traxxas.ownerId == userId : false);
 

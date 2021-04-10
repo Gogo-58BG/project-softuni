@@ -13,9 +13,6 @@ const Register = ({
 
     const onSaveSubmit = (e) => {
         e.preventDefault();
-        console.log(e.target.username.value);
-        console.log(e.target.password.value);
-        console.log(e.target.repPass.value);
 
         let username = e.target.username.value;
         let password = e.target.password.value;

@@ -11,12 +11,10 @@ const Edit = ({
     useEffect(() => {
         traxxasServices.getOne(match.params.objectId)
             .then(res => setTraxxas(res));
-        console.log(traxxas);
     }, []);
 
     const onSaveSubmit = (e) => {
         e.preventDefault();
-        console.log(e.target);
 
         let traxxasId = match.params.objectId;
         let updatedTraxxas = {...traxxas, 

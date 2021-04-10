@@ -24,7 +24,7 @@ class Main extends Component {
                 <section className="Monster Trucks">
                     <h2>Monster Trucks</h2>                
                     {this.state.traxxas.filter(x => x.category == 'monster-trucks').map(x =>
-                        <div key={x.id} className="articles">
+                        <div key={x.objectId} className="articles">
                             <article>
                                 <h3>{x.title}</h3>
                                 <img className="detail-img" src={x.imageURL} alt="traxxas-image" />
@@ -38,7 +38,7 @@ class Main extends Component {
                 <section className="On Road Cars">
                     <h2>On Road Cars</h2>
                     {this.state.traxxas.filter(x => x.category == 'on-road-cars').map(x =>
-                        <div key={x.id} className="articles">
+                        <div key={x.objectId} className="articles">
                             <article>
                                 <h3>{x.title}</h3>
                                 <img className="detail-img" src={x.imageURL} alt="traxxas-image" />
@@ -51,7 +51,7 @@ class Main extends Component {
                 <section className="Short Course Trucks">
                     <h2>Short Course Trucks</h2>
                     {this.state.traxxas.filter(x => x.category == 'short-course-trucks').map(x =>
-                        <div key={x.id} className="articles">
+                        <div key={x.objectId} className="articles">
                             <article>
                                 <h3>{x.title}</h3>
                                 <img className="detail-img" src={x.imageURL} alt="traxxas-image" />
@@ -64,7 +64,7 @@ class Main extends Component {
                 <section className="Stadium Trucks">
                     <h2>Stadium Trucks</h2>
                     {this.state.traxxas.filter(x => x.category == 'stadium-trucks').map(x =>
-                        <div key={x.id} className="articles">
+                        <div key={x.objectId} className="articles">
                             <article>
                                 <h3>{x.title}</h3>
                                 <img className="detail-img" src={x.imageURL} alt="traxxas-image" />

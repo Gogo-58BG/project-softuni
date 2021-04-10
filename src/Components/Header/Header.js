@@ -1,18 +1,8 @@
-import style from './Header.module.css';
 import { Link } from 'react-router-dom';
-import {logout} from '../../Services/traxxasServices';
-import { useHistory } from "react-router-dom";
 
 const Header = (logedInUser=[]) => {
     let user = logedInUser.user
-    let history = useHistory();
     let isAuthorized = Boolean(user);
-    // const logoutUser = async (user) => {
-    //     console.log(user)
-
-    //     await logout(user);
-    //     history.push('/')
-    // }
     
     return (
         <header>

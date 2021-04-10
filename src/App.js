@@ -11,7 +11,6 @@ import Create from './Components/Create/Create';
 import Delete from './Components/Delete/Delete';
 import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
-import Logout from'./Components/Logout/Logout';
 import { getUserDataInLocalStorage } from './Services/localStorageService';
 import { logout } from './Services/traxxasServices';
 
@@ -29,7 +28,6 @@ const App = () => {
         <Route path="/traxxas/details/:objectId/delete" exact component={Delete} />
         <Route path="/register" exact component={Register} />
         <Route path="/login" render={props => <Login {...props} setUser={setUser} />} />
-        {/* <Route path="/logout" component={Logout} /> */}
         <Route path="/logout"  render={() => {
          logout(user);
          setUser(null);

@@ -6,7 +6,6 @@ const Create = ({
     logedInUser,
 }) => {
     let userId = logedInUser.objectId;
-    console.log(userId);
 
     const onCreateTraxxasSubmitHandler = (e) => {
         e.preventDefault();
